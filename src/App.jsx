@@ -1,37 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+import { ProductCard } from './components/ProductCard'
 import './App.css'
+import  Products  from './data/Products'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+const renderProducts=Products.map(product=>(<ProductCard key={product.id} product{...product}/>))
+console.log(renderProducts);
 
   return (
-    <>
-      <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className='container'>
+      <div className="m-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 p-2 rounded-md">
+        {renderProducts}
+        
+        
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </main>
   )
 }
 
