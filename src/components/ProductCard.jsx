@@ -10,8 +10,8 @@ export const ProductCard = ({title,description,imageURL,category,price}) => {
   return (
     <div className='border rounded-md p-4 flex flex-col max-w-sm md:max-w-ld mx-auto md:mx-0 '>
         <Image imageUrl={imageURL} alt={"Product name"} className="rounded-md mb-2"></Image>
-        <h3>{title}</h3>
-        <p>{textSclicer(description)}</p>
+        <h3 className='font-semibold text-xl mb-2'>{title}</h3>
+        <p className='font-thin'>{textSclicer(description)}</p>
 
         
         <div className='flex items-center my-5 space-x-2'>
