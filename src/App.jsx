@@ -46,13 +46,13 @@ const renderFormInputList=formInputsList.map(input=> (
       </div>
       <Modal isOpen={isOpen} closeModal={closeModal} title="Add New Product" > 
 
-        <div className='space-y-3'>
+        <form className='space-y-3'>
           {renderFormInputList}
           <div className='flex items-center space-x-3'>
         <Button className='bg-indigo-700 hover:bg-indigo-900 transition-all'>Submit</Button>
         <Button className='bg-gray-400 hover:bg-gray-900 transition-all'>Cancel</Button>
         </div>
-          </div>
+          </form>
 
         
       </Modal>
